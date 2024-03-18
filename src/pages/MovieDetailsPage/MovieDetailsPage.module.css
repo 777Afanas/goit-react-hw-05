@@ -1,4 +1,34 @@
+.div {
+    display: flex;
+    /* gap: 20px; */
+}
 
+ul {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.details {
+    text-align: left;
+}
+
+.divDetails {
+    margin-left: 12px;
+}
+
+.btn {
+    width: 120px;
+    height: 24px;
+    color: rgb(0, 15, 0);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.btn :hover,
+:focus {
+    color: #4fa94d;
+}
 
 
 
