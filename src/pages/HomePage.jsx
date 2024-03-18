@@ -4,9 +4,7 @@ import MovieList from "../components/MovieList/MovieList";
 import { getTrendingMovies } from "../movies-api";
 
 
-
 export default function HomePage() {
-
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -23,16 +21,15 @@ export default function HomePage() {
         setIsLoading(false);
       }
     };
-    fetchData(); 
-  }, []); 
+    fetchData();
+  }, []);
 
   return (
     <>
       <h2>Trending today</h2>
       {isLoading && <Loader />}
-      {error && <p>HTTP error!</p>}
+      {error && <p>HTTP error!Reload page, please...</p>}
       {movies.length > 0 && <MovieList movies={movies} />}
-      
     </>
   );
 }

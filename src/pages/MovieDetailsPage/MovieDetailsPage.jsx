@@ -7,12 +7,11 @@ import {
   useParams,
 } from "react-router-dom";
 import { getMovieById } from "../../movies-api";
-import Loader from "../../components/Loader/Loader"; 
+import Loader from "../../components/Loader/Loader";
 import css from "./MovieDetailsPage.module.css";
 import clsx from "clsx";
 // import unknown from
 // import { FaArrowLeft } from "react-icons/fa6";
-
 
 const linkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.isActive);
@@ -57,9 +56,11 @@ export default function MovieDetailsPage() {
         <div className={css.div}>
           <img
             src={
-              movie.poster_path
-                ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-                : <p>Unknown...</p>
+              movie.poster_path ? (
+                `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+              ) : (
+                <p>Unknown...</p>
+              )
             }
             alt={movie.title || "Default title"}
             width={300}
@@ -82,13 +83,17 @@ export default function MovieDetailsPage() {
         </div>
       )}
       <hr style={{ width: "100%" }} />
-      <p>Additional information</p> 
+      <p>Additional information</p>
       <ul>
         <li>
-          <NavLink to="cast" className={linkClass}>Casts</NavLink>
+          <NavLink to="cast" className={linkClass}>
+            Casts
+          </NavLink>
         </li>
         <li>
-          <NavLink to="reviews" className={linkClass}>Reviews</NavLink>
+          <NavLink to="reviews" className={linkClass}>
+            Reviews
+          </NavLink>
         </li>
       </ul>
       <Suspense fallback={<div>LOADING SUB COMPONENT...</div>}>

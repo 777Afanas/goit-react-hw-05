@@ -1,24 +1,26 @@
+.link {
+    font-size: 15px;
+    color: black;
+    /* text-decoration: none; */
+}
+
 .list {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    list-style-type: none;
 }
 
-.div {
-    width: 120px;
-    justify-content: center;
+
+.item {
+    /* display: flex;
+    gap: 16px; */
+    align-items: flex-start;
+    margin-bottom: 8px;
 }
 
-.div :hover,
-:focus {
-    width: 105%;
-    color: #4fa94d;
-}
 
-/* .h3 {
-    text-align: center;
-    color: rgb(0, 15, 0);
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1em;
-} */
+.h3 {
+ text-transform: capitalize;
+  color: rgb(0, 15, 0);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1em;
+}

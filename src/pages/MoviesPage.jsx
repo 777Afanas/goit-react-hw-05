@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom"; 
+import { useSearchParams } from "react-router-dom";
 import { getMoviesByQuery } from "../movies-api";
 import SearchBox from "../components/SearchBox/SearchBox";
 import Loader from "../components/Loader/Loader";
 import MovieList from "../components/MovieList/MovieList";
+
 
 
 export default function MoviesPage() {
@@ -38,7 +39,7 @@ export default function MoviesPage() {
     <>
       <SearchBox onHandlerSubmit={handlerSubmit} />
       {isLoading && <Loader />}
-      {error && <p>Something is wrong! Reload.</p>}
+      {error && <p>Something is wrong! Reload...</p>}
       {movies.length > 0 && <MovieList movies={movies} />}
     </>
   );

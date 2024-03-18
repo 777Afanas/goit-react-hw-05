@@ -1,0 +1,37 @@
+ul {
+    /* display: flex; */
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.item {
+    width: 120px;
+    justify-content: center;
+}
+
+
+img {
+    /* display: block; */
+    max-width: 100%;
+}
+p {
+    color: rgb(0, 15, 0);
+    text-align: left;
+    font-size: 18px;
+    /* font-weight: 500; */
+}
+
+.p {
+    font-weight: 500;
+}
+
+.p :hover,
+:focus {
+    color: #a94d55;
+}
+
+.char {
+    font-weight: 400;
+    font-size: 15px;
+    font-style: italic;
+}

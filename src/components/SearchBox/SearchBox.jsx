@@ -1,10 +1,8 @@
-import { useState } from "react";
-import { IoSearch } from "react-icons/io5";
+import { useState } from "react"; 
 import css from "./SearchBox.module.css";
 
-export default function SearchBox ({ onHandlerSubmit }) {
- 
-    const [query, setQuery] = useState("");
+export default function SearchBox({ onHandlerSubmit }) {
+  const [query, setQuery] = useState("");
 
   const handleChange = (e) => {
     setQuery(e.target.value);
@@ -28,10 +26,10 @@ export default function SearchBox ({ onHandlerSubmit }) {
           onChange={handleChange}
           placeholder="Search movies"
         />
-        <button type="submit" className={css.btn}>
-          <IoSearch className={css.btnImg} />
+        <button type="submit" className={css.btn}>           
+          Search
         </button>
       </div>
     </form>
   );
-};
+}
