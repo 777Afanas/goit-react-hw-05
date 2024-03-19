@@ -6,12 +6,14 @@ import css from "./MovieCast.module.css";
 
 
 
-export default function MovieCast() {
-
+export default function MovieCast() { 
   const { movieId } = useParams();
   const [actor, setActor] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const defaultPng =
+    "https://cdn.pixabay.com/photo/2016/05/28/05/40/question-mark-1421017_1280.png";
 
   useEffect(() => {
     async function getData() {
@@ -40,7 +42,7 @@ export default function MovieCast() {
                 src={
                   profile_path
                     ? `https://image.tmdb.org/t/p/w500/${profile_path}`
-                    : <p>Unknown...</p>
+                    : defaultPng
                 }
                 alt={name}
                 width={120}

@@ -10,8 +10,6 @@ import { getMovieById } from "../../movies-api";
 import Loader from "../../components/Loader/Loader";
 import css from "./MovieDetailsPage.module.css";
 import clsx from "clsx";
-// import unknown from
-// import { FaArrowLeft } from "react-icons/fa6";
 
 const linkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.isActive);
@@ -25,6 +23,9 @@ export default function MovieDetailsPage() {
 
   const location = useLocation();
   const goBack = useRef(location?.state?.from ?? "/");
+
+  const defaultPng =
+    "https://cdn.pixabay.com/photo/2016/05/28/05/40/question-mark-1421017_1280.png";
 
   useEffect(() => {
     async function getData() {
@@ -43,13 +44,7 @@ export default function MovieDetailsPage() {
 
   return (
     <div>
-      <Link to={goBack.current}>
-        {/* <button className={css.btn}>
-          <FaArrowLeft />
-          Go back
-        </button> */}
-        Go back
-      </Link>
+      <Link to={goBack.current}>Go back</Link>
       {isLoading && <Loader />}
       {error && <p>Something is wrong! Reload...</p>}
       {movie && (
@@ -58,9 +53,7 @@ export default function MovieDetailsPage() {
             src={
               movie.poster_path ? (
                 `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-              ) : (
-                <p>Unknown...</p>
-              )
+              ) : defaultPng               
             }
             alt={movie.title || "Default title"}
             width={300}
